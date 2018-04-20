@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_16_203311) do
+ActiveRecord::Schema.define(version: 2018_04_20_211243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2018_04_16_203311) do
   create_table "parsers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "main_url"
+    t.string "record_list_tag"
+    t.string "record_tag"
+    t.string "header_tag"
+    t.string "content_tag"
+    t.string "name"
+    t.string "img_tag"
+    t.string "img_attr"
+    t.index ["name"], name: "index_parsers_on_name", unique: true
   end
 
 end
