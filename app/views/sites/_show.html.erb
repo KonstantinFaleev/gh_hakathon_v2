@@ -1,0 +1,49 @@
+<div id='show-container'>
+  <div class='title'>
+    <h2><%= site.name %></h2>
+    <a class="btn btn-secondary" href="<%= site.main_url %>" target="_blank">View website</a>
+  </div>
+  <div class='entries'>
+    <% site.site_entries[0...entry_limit].each_with_index do |entry, i| %>
+        <div class='entry-pre'>
+          <h5><%= i+1 %>. <%= entry.header %></h5>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#entryModal<%= entry.id %>">
+            Preview
+          </button>
+          <a class="btn btn-info" href="<%= entry.link %>" target="_blank">
+            View full
+          </a>
+
+          <!-- The Modal -->
+          <div class="modal fade" id="entryModal<%= entry.id %>">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title"><%= entry.header %></h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <% if entry.img %>
+                    <div class='entry-img'><img src="<%= entry.img %>" class='img'/></div>
+                <% end %>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <%= entry.transformed_content.html_safe %>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <a class="btn btn-primary" href="<%= entry.link %>" target="_blank">Go to page</a>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

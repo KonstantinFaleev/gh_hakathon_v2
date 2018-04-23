@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="gh_hakathon_v2_development@localhost" uuid="1983dda0-0bfc-4f66-8291-5fd8e1a389ac">
+      <database-info product="PostgreSQL" version="9.5.12" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>konstantinfaleev</user-name>
+      <introspection-schemas>gh_hakathon_v2_development:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>

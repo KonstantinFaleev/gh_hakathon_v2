@@ -10,36 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_20_212833) do
+ActiveRecord::Schema.define(version: 2018_04_22_202915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "parser_records", force: :cascade do |t|
+  create_table "site_entries", force: :cascade do |t|
     t.string "link"
     t.string "header"
     t.string "content"
-    t.string "img_tag"
     t.string "img"
-    t.bigint "parser_id"
+    t.bigint "site_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["parser_id"], name: "index_parser_records_on_parser_id"
+    t.index ["link"], name: "index_site_entries_on_link", unique: true
+    t.index ["site_id"], name: "index_site_entries_on_site_id"
   end
 
-  create_table "parsers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "sites", force: :cascade do |t|
     t.string "main_url"
-    t.string "record_list_tag"
-    t.string "record_tag"
+    t.string "entry_list_tag"
+    t.string "entry_tag"
     t.string "header_tag"
     t.string "content_tag"
     t.string "name"
     t.string "img_tag"
     t.string "img_attr"
-    t.index ["name"], name: "index_parsers_on_name", unique: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_sites_on_name", unique: true
   end
 
-  add_foreign_key "parser_records", "parsers"
+  add_foreign_key "site_entries", "sites"
 end

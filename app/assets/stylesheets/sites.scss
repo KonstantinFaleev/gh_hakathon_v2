@@ -1,0 +1,36 @@
+// Place all the styles related to the sites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.modal-dialog {
+  max-width: none !important;
+  margin: 1.75rem 50px !important;
+}
+.modal-title {
+  font-weight: bold;
+}
+.modal-footer {
+  justify-content: space-between !important;
+}
+.buttons {
+  margin-top: 50px;
+  text-align: center;
+}
+// .refresh-div {
+//   text-align: center;
+// }
+#show-container {
+  .title {
+    text-align: center;
+  }
+  .entries {
+    .entry-pre {
+      margin: 25px 10px;
+      .entry-img {
+        text-align: center;
+        .img {
+          width: 480px;
+        }
+      }
+    }
+  }
+}
