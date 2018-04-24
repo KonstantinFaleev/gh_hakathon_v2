@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Site.create({
+                name: 'newsamerica',
+                main_url: 'http://www.newsamerica.com/latest-news/',
+                entry_list_tag: '.left-side-bar',
+                entry_tag: '.post-contant',
+                header_tag: '.post-contant h3',
+                content_tag: '.post-contant',
+                img_tag: 'p',
+                img_attr: 'src'
+            })
+Site.create({
                 name: 'Vox',
                 main_url: 'https://www.vox.com/',
                 entry_list_tag: '.c-compact-river',
@@ -44,4 +54,14 @@ Site.create({
                 content_tag: '.post-body, .c-formatted.c-post-content',
                 img_tag: 'a',
                 img_attr: 'data-src'
+            })
+Site.create({
+                name: 'zmi.ck.ua',
+                main_url: 'http://zmi.ck.ua/news',
+                entry_list_tag: '.col-md-9',
+                entry_tag: '.btn btn-primary btn-success',
+                header_tag: 'span.glyphicon glyphicon-time.h2',
+                content_tag: '.news-text',
+                img_tag: 'img.img-responsive',
+                img_attr: 'src'
             })
